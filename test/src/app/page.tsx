@@ -46,7 +46,7 @@ const UserDetails = () => {
   // Debounce the search function
   const debouncedSearch = debounce((value) => {
     getUserDetails({ variables: { username: value } });
-  }, 500); // Adjust the debounce delay as needed
+  }, 500); 
 
   const handleSearch = (value) => {
     setUsername(value);
