@@ -7,12 +7,12 @@ const httpLink = createHttpLink({
 
 const authLink = setContext((_, { headers }) => {
   
-  // const token = process.env.GITHUB_TOKEN; 
+  const token = process.env.GITHUB_TOKEN; 
 
   return {
     headers: {
       ...headers,
-      Authorization: `Bearer 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`, 
+      Authorization: `Bearer ${token}`, 
     },
   };
 });
