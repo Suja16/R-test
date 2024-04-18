@@ -1,20 +1,18 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-// Define the HTTP link for connecting to GitHub's GraphQL endpoint
 const httpLink = createHttpLink({
-  uri: "https://api.github.com/graphql", // GitHub's GraphQL endpoint
+  uri: "https://api.github.com/graphql", 
 });
 
-// Create a context link that adds your GitHub access token to the headers
 const authLink = setContext((_, { headers }) => {
-  // Get the access token securely from environment variables
-  const token = process.env.GITHUB_TOKEN; // You should configure this in your .env.local file
+  
+  // const token = process.env.GITHUB_TOKEN; 
 
   return {
     headers: {
       ...headers,
-      Authorization: `Bearer ${token}`, // Format for GitHub authentication header
+      Authorization: `Bearer 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`, 
     },
   };
 });
